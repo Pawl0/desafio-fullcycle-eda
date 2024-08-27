@@ -1,0 +1,32 @@
+
+POST http://localhost:8080/clients HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john@doe.com"
+}
+
+###
+
+POST http://localhost:8080/accounts HTTP/1.1
+Content-Type: application/json
+
+{
+    "client_id": "5d772f45-a9ae-4fdf-8f35-72882b76f915"
+}
+
+###
+
+POST http://localhost:8080/transactions HTTP/1.1
+Content-Type: application/json
+
+{
+    "account_id_from": "532fe986-9602-49fc-9522-d5b883d4694a",
+    "account_id_to": "b4e73e51-626a-420d-b92d-795693b6f0bf",
+    "amount": 1
+}
+
+### Rota para consular saldo passando o id da conta
+
+GET http://localhost:3003/balance/532fe986-9602-49fc-9522-d5b883d4694a HTTP/1.1
