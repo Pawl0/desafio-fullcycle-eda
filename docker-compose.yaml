@@ -50,8 +50,8 @@ services:
           'root',
           '-proot',
         ]
-      timeout: 5s
-      retries: 10
+      timeout: 10s
+      retries: 20
     volumes:
       - ./init:/docker-entrypoint-initdb.d
 
