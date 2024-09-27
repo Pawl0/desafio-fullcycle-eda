@@ -9,11 +9,11 @@ RUN apk upgrade --no-cache && apk upgrade -U openssl
 COPY package*.json ./
 COPY yarn.lock ./
 
-# Install dependencies
-RUN yarn install
-
 # Copy the rest of the application code to the working directory
 COPY . .
+
+# Install dependencies
+RUN yarn install
 
 EXPOSE 3003
 
