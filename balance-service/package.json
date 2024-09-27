@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node .",
     "db:migrate": "npx prisma migrate dev",
+    "db:generate": "npx prisma generate",
+    "postinstall": "npm run db:generate",
     "db:seed": "ts-node prisma/seed.ts",
     "docker:reset": "docker stop $(docker ps -a -q) && docker rm $(docker ps -aq) && docker volume prune --force && docker system prune && docker rmi $(docker images -a -q)"
   },
@@ -13,13 +15,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "5.16.1",
+    "@prisma/client": "^5.20.0",
     "express": "^4.19.2",
     "kafkajs": "^2.2.4"
   },
   "devDependencies": {
     "@types/node": "^22.4.1",
-    "prisma": "^5.16.1",
+    "prisma": "^5.20.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }
